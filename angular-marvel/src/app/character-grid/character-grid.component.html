@@ -1,0 +1,9 @@
+<div class="container" style="padding-top: 80px;" *ngIf="characterData?.results">
+  <app-pagination [paginationData]="paginationData" (refreshPage)="populatePageWithCharacterData($event)"></app-pagination>
+  <div class="row">
+    <div class="col-3" *ngFor="let character of characterData.results;">
+      <app-character-grid-card [character]="character"></app-character-grid-card>
+    </div>
+  </div>
+  <app-pagination [paginationData]="paginationData" (refreshPage)="populatePageWithCharacterData($event)"></app-pagination>
+</div>
